@@ -24,7 +24,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 public class ClienteEntity {
-
+    
     @Id
     private UUID id;
 

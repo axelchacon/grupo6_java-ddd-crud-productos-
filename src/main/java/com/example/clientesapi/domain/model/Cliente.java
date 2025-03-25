@@ -21,23 +21,21 @@ public class Cliente {
     private final String apellido;
     private final String dni;
     private final String email;
-    private final Boolean isActive;
+    private final Boolean activo;
+    private final LocalDateTime fechaCreacion;
+    private final LocalDateTime fechaActualizacion;
 
 
 
     /**
      * Método para actualizar un producto con nuevos valores
      */
-    public Cliente actualizar(String nombre, String descripcion, BigDecimal precio,
-                              Integer stock, String categoria) {
+    public Cliente actualizar(String nombre, String apellido, String email, Boolean activo) {
         return Cliente.builder()
                 .id(this.id)
-                .codigo(this.codigo)
                 .nombre(nombre)
-                .descripcion(descripcion)
-                .precio(precio)
-                .stock(stock)
-                .categoria(categoria)
+                .apellido(apellido)
+                .email(email)
                 .activo(this.activo)
                 .fechaCreacion(this.fechaCreacion)
                 .fechaActualizacion(LocalDateTime.now())
@@ -50,12 +48,9 @@ public class Cliente {
     public Cliente cambiarEstado(Boolean activo) {
         return Cliente.builder()
                 .id(this.id)
-                .codigo(this.codigo)
                 .nombre(this.nombre)
-                .descripcion(this.descripcion)
-                .precio(this.precio)
-                .stock(this.stock)
-                .categoria(this.categoria)
+                .apellido(this.apellido)
+                .email(this.email)
                 .activo(activo)
                 .fechaCreacion(this.fechaCreacion)
                 .fechaActualizacion(LocalDateTime.now())
