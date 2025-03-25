@@ -35,52 +35,51 @@ public interface ClienteService {
     Cliente obtenerClientePorDNI(String codigo);
 
     /**
-     * Obtiene todos los productos
-     * @return lista de productos
+     * Obtiene todos los clientes
+     * @return lista de clientes
      */
     List<Cliente> obtenerTodosLosClientes();
 
     /**
-     * Obtiene productos por categoría
-     * @param categoria la categoría a buscar
-     * @return lista de productos de la categoría
+     * Obtiene clientes por categoría
+     * @param nombre la categoría a buscar
+     * @return lista de clientes de la categoría
      */
-    List<Cliente> obtenerProductosPorNombre(String nombre);
+    List<Cliente> obtenerClientesPorNombre(String nombre);
 
       /**
-     * Obtiene productos por categoría
-     * @param categoria la categoría a buscar
-     * @return lista de productos de la categoría
+     * Obtiene clientes por categoría
+     * @param apellido la categoría a buscar
+     * @return lista de clientes de la categoría
      */
-    List<Cliente> obtenerProductosPorApellido(String apellido);
+    List<Cliente> obtenerClientesPorApellido(String apellido);
 
     /**
      * Actualiza un cliente existente
      * @param id el ID del cliente a actualizar
      * @param nombre nuevo nombre
-     * @param descripcion nueva descripción
-     * @param precio nuevo precio
-     * @param stock nuevo stock
-     * @param categoria nueva categoría
+     * @param apellido nuevo apellido
+     * @param email nuevo email
+     * @param active si esta activo
      * @return el cliente actualizado
-     * @throws ProductoNotFoundException si no se encuentra el cliente
+     * @throws ClienteNotFoundException si no se encuentra el cliente
      */
-    Cliente actualizarCliente(UUID id, String nombre, String descripcion,
-                               BigDecimal precio, Integer stock, String categoria);
+    Cliente actualizarCliente(UUID id, String nombre, String apellido,
+                              String email, Boolean active);
 
     /**
      * Actualiza el estado (activo/inactivo) de un cliente
      * @param id el ID del cliente
      * @param activo el nuevo estado
      * @return el cliente actualizado
-     * @throws ProductoNotFoundException si no se encuentra el cliente
+     * @throws ClienteNotFoundException si no se encuentra el cliente
      */
     Cliente actualizarEstadoCliente(UUID id, Boolean activo);
 
     /**
      * Elimina un cliente por su ID
      * @param id el ID del cliente a eliminar
-     * @throws ProductoNotFoundException si no se encuentra el cliente
+     * @throws ClienteNotFoundException si no se encuentra el cliente
      */
     void eliminarCliente(UUID id);
 

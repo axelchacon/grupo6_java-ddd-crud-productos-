@@ -35,22 +35,22 @@ public interface ClienteRepository {
     Optional<Cliente> findByDNI(String dni);
 
     /**
-     * Obtiene todos los productos
-     * @return lista de productos
+     * Obtiene todos los clientes
+     * @return lista de clientes
      */
     List<Cliente> findAll();
 
     /**
-     * Busca productos por nombre
+     * Busca clientes por nombre
      * @param nombre la nombre a buscar
-     * @return lista de productos que pertenecen a la nombre
+     * @return lista de clientes que pertenecen a la nombre
      */
     List<Cliente> findByNombre(String nombre);
 
     /**
-     * Busca productos por apellido 
+     * Busca clientes por apellido 
      * @param apellido la apellido a buscar
-     * @return lista de productos que pertenecen al apellido  
+     * @return lista de clientes que pertenecen al apellido  
      */
     List<Cliente> findByApellido(String apellido);
 
