@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
- * Evento de dominio para productos
+ * Evento de dominio para clientes
  * Se puede utilizar para implementar Event Sourcing o publicar eventos
  */
 @Getter
@@ -16,7 +16,7 @@ import java.util.UUID;
 public class ClienteEvent {
 
     public enum TipoEvento {
-        CREADO, ACTUALIZADO, ELIMINADO, ESTADO_CAMBIADO, STOCK_ACTUALIZADO
+        CREADO, ACTUALIZADO, ELIMINADO, ESTADO_CAMBIADO
     }
 
     private final UUID id;
@@ -72,15 +72,4 @@ public class ClienteEvent {
         );
     }
 
-    /**
-     * Crea un evento de stock de cliente actualizado
-     */
-    public static ClienteEvent stockActualizado(Cliente cliente) {
-        return new ClienteEvent(
-                UUID.randomUUID(),
-                TipoEvento.STOCK_ACTUALIZADO,
-                cliente,
-                LocalDateTime.now()
-        );
-    }
 }

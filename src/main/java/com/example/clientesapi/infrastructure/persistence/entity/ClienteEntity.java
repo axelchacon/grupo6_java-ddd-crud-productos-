@@ -35,10 +35,10 @@ public class ClienteEntity {
     private String apellido;
 
     @Column(nullable = false, length = 100)
-    private String apellido;
+    private String dni;
 
     @Column(nullable = false, length = 100)
-    private String apellido;
+    private String em;
 
  
 
