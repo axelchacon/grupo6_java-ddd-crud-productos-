@@ -23,8 +23,8 @@ public class ClienteRepositoryAdapter implements ClienteRepository {
     private final ClienteMapper mapper;
 
     @Override
-    public Cliente save(Cliente producto) {
-        var entity = mapper.toEntity(producto);
+    public Cliente save(Cliente cliente) {
+        var entity = mapper.toEntity(cliente);
         var savedEntity = jpaRepository.save(entity);
         return mapper.toDomain(savedEntity);
     }
@@ -36,8 +36,8 @@ public class ClienteRepositoryAdapter implements ClienteRepository {
     }
 
     @Override
-    public Optional<Cliente> findByCodigo(String codigo) {
-        return jpaRepository.findByCodigo(codigo)
+    public Optional<Cliente> findByDNI(String dni) {
+        return jpaRepository.findByDni(dni)
                 .map(mapper::toDomain);
     }
 
@@ -49,8 +49,15 @@ public class ClienteRepositoryAdapter implements ClienteRepository {
     }
 
     @Override
-    public List<Cliente> findByCategoria(String categoria) {
-        return jpaRepository.findByCategoria(categoria).stream()
+    public List<Cliente> findByNombre(String nombre) {
+        return jpaRepository.findByNombre(nombre).stream()
+                .map(mapper::toDomain)
+                .collect(Collectors.toList());
+    }
+
+       @Override
+    public List<Cliente> findByApellido(String nombre) {
+        return jpaRepository.findByApellido(nombre).stream()
                 .map(mapper::toDomain)
                 .collect(Collectors.toList());
     }
@@ -61,7 +68,7 @@ public class ClienteRepositoryAdapter implements ClienteRepository {
     }
 
     @Override
-    public boolean existsByCodigo(String codigo) {
-        return jpaRepository.existsByCodigo(codigo);
+    public boolean existsByDNI(String dni) {
+        return jpaRepository.existsByDni(dni);
     }
 }

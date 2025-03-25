@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 /**
- * Caso de uso para crear un producto
+ * Caso de uso para crear un cliente
  */
 @Component
 @RequiredArgsConstructor
@@ -16,10 +16,10 @@ public class CreateClienteUseCase {
 
     /**
      * Ejecuta el caso de uso
-     * @param producto el producto a crear
-     * @return el producto creado
+     * @param cliente el cliente a crear
+     * @return el cliente creado
      */
-    public Cliente execute(Cliente producto) {
-        return productoService.crearProducto(producto);
+    public Cliente execute(Cliente cliente) {
+        return productoService.crearCliente(cliente);
     }
 }

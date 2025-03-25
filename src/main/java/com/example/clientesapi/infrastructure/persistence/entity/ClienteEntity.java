@@ -14,37 +14,31 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
- * Entidad JPA para la tabla de productos
+ * Entidad JPA para la tabla de clientes")
  */
 @Entity
-@Table(name = "productos")
+@Table(name = "clientes")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 public class ClienteEntity {
-
+    
     @Id
     private UUID id;
-
-    @Column(nullable = false, unique = true, length = 50)
-    private String codigo;
 
     @Column(nullable = false, length = 100)
     private String nombre;
 
-    @Column(columnDefinition = "TEXT")
-    private String descripcion;
+    @Column(nullable = false, length = 100)
+    private String apellido;
 
-    @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal precio;
+    @Column(nullable = false, length = 50)
+    private String dni;
 
-    @Column(nullable = false)
-    private Integer stock;
-
-    @Column(length = 50)
-    private String categoria;
+    @Column(nullable = false, length = 100)
+    private String email;
 
     @Column(nullable = false)
     private Boolean activo;

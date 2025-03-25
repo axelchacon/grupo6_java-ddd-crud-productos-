@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -19,12 +18,10 @@ import java.util.UUID;
 public class ClienteResponse {
 
     private UUID id;
-    private String codigo;
     private String nombre;
-    private String descripcion;
-    private BigDecimal precio;
-    private Integer stock;
-    private String categoria;
+    private String apellido;
+    private String dni;
+    private String email;
     private Boolean activo;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaActualizacion;
