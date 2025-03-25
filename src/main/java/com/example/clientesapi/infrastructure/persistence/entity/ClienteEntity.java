@@ -14,10 +14,10 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
- * Entidad JPA para la tabla de productos
+ * Entidad JPA para la tabla de clientes")
  */
 @Entity
-@Table(name = "productos")
+@Table(name = "clientes")
 @Data
 @Builder
 @NoArgsConstructor

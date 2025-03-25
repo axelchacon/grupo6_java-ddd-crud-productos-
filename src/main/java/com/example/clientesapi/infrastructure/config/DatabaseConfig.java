@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@EntityScan(basePackages = "com.example.productosapi.infrastructure.persistence.entity")
-@EnableJpaRepositories(basePackages = "com.example.productosapi.infrastructure.persistence.repository")
+@EntityScan(basePackages = "com.example.clientesapi.infrastructure.persistence.entity")
+@EnableJpaRepositories(basePackages = "com.example.clientesapi.infrastructure.persistence.repository")
 public class DatabaseConfig {
     // La configuración se establece mediante anotaciones y properties
 }

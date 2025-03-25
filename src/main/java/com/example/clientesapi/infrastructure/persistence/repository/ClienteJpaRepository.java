@@ -15,17 +15,23 @@ import java.util.UUID;
 public interface ClienteJpaRepository extends JpaRepository<ClienteEntity, UUID> {
 
     /**
-     * Busca un producto por su código
+     * Busca un cliente por su dni
      */
-    Optional<ClienteEntity> findByCodigo(String codigo);
+    Optional<ClienteEntity> findByDni(String dni);
 
     /**
-     * Busca productos por categoría
+     * Busca productos por nombre
      */
-    List<ClienteEntity> findByCategoria(String categoria);
+    List<ClienteEntity> findByNombre(String nombre);
+
 
     /**
-     * Verifica si existe un producto con el código proporcionado
+     * Busca productos por apellido
      */
-    boolean existsByCodigo(String codigo);
+    List<ClienteEntity> findByApellido(String apellido);
+
+    /**
+     * Verifica si existe un cliente con el dni proporcionado
+     */
+    boolean existsByDni(String dni);
 }
