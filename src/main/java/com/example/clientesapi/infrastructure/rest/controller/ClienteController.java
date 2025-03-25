@@ -5,7 +5,7 @@ import com.example.clientesapi.infrastructure.persistence.mapper.ClienteMapper;
 import com.example.clientesapi.infrastructure.rest.dto.ClienteRequest;
 import com.example.clientesapi.infrastructure.rest.dto.ClienteResponse;
 import com.example.clientesapi.infrastructure.rest.dto.ClienteUpdateRequest;
-import com.example.clientesapi.infrastructure.rest.dto.StockUpdateRequest;
+import com.example.clientesapi.infrastructure.rest.dto.StatusUpdateRequest;
 import com.example.clientesapi.usecase.CreateClienteUseCase;
 import com.example.clientesapi.usecase.DeleteClienteUseCase;
 import com.example.clientesapi.usecase.GetClienteUseCase;
@@ -105,7 +105,7 @@ public class ClienteController {
     @PatchMapping("/{id}/estado")
     public ResponseEntity<ClienteResponse> actualizarEstadoProducto(
             @PathVariable UUID id,
-            @Valid @RequestBody EstadoUpdateRequest request) {
+            @Valid @RequestBody StatusUpdateRequest request) {
 
         Cliente actualizado = updateProductoUseCase.executeStateUpdate(id, request.getActivo());
         return ResponseEntity.ok(mapper.toResponse(actualizado));
@@ -117,7 +117,7 @@ public class ClienteController {
     @PatchMapping("/{id}/stock")
     public ResponseEntity<ClienteResponse> actualizarStockProducto(
             @PathVariable UUID id,
-            @Valid @RequestBody StockUpdateRequest request) {
+            @Valid @RequestBody StatusUpdateRequest request) {
 
         Cliente actualizado = updateProductoUseCase.executeStockUpdate(id, request.getCantidad());
         return ResponseEntity.ok(mapper.toResponse(actualizado));

@@ -15,24 +15,24 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class GetClienteUseCase {
 
-    private final ClienteService productoService;
+    private final ClienteService clienteService;
 
     /**
-     * Obtiene un producto por su ID
-     * @param id el ID del producto
-     * @return el producto encontrado
+     * Obtiene un cliente por su ID
+     * @param id el ID del cliente
+     * @return el cliente encontrado
      */
     public Cliente executeById(UUID id) {
-        return productoService.obtenerProductoPorId(id);
+        return clienteService.obtenerClientePorId(id);
     }
 
     /**
-     * Obtiene un producto por su código
-     * @param codigo el código del producto
-     * @return el producto encontrado
+     * Obtiene un cliente por su código
+     * @param dni el código del cliente
+     * @return el cliente encontrado
      */
-    public Cliente executeByCodigo(String codigo) {
-        return productoService.obtenerProductoPorCodigo(codigo);
+    public Cliente executeByCodigo(String dni) {
+        return clienteService.obtenerClientePorDNI(dni);
     }
 
     /**
@@ -40,7 +40,7 @@ public class GetClienteUseCase {
      * @return lista de todos los productos
      */
     public List<Cliente> executeAll() {
-        return productoService.obtenerTodosLosProductos();
+        return clienteService.obtenerTodosLosClientes();
     }
 
     /**
@@ -48,7 +48,16 @@ public class GetClienteUseCase {
      * @param categoria la categoría a buscar
      * @return lista de productos de la categoría
      */
-    public List<Cliente> executeByCategoria(String categoria) {
-        return productoService.obtenerProductosPorCategoria(categoria);
+    public List<Cliente> executeByNombre(String categoria) {
+        return clienteService.obtenerClientesPorNombre(categoria);
+    }
+
+    /**
+     * Obtiene productos por categoría
+     * @param apellido la categoría a buscar
+     * @return lista de productos de la categoría
+     */
+    public List<Cliente> executeByApellido(String apellido) {
+        return clienteService.obtenerClientesPorApellido(apellido);
     }
 }

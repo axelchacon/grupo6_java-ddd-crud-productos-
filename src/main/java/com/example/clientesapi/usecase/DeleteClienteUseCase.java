@@ -7,19 +7,19 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 /**
- * Caso de uso para eliminar un producto
+ * Caso de uso para eliminar un cliente
  */
 @Component
 @RequiredArgsConstructor
 public class DeleteClienteUseCase {
 
-    private final ClienteService productoService;
+    private final ClienteService clienteService;
 
     /**
-     * Ejecuta el caso de uso para eliminar un producto
-     * @param id ID del producto a eliminar
+     * Ejecuta el caso de uso para eliminar un cliente
+     * @param id ID del cliente a eliminar
      */
     public void execute(UUID id) {
-        productoService.eliminarProducto(id);
+        clienteService.eliminarCliente(id);
     }
 }

@@ -60,12 +60,11 @@ public interface ClienteService {
      * @param nombre nuevo nombre
      * @param apellido nuevo apellido
      * @param email nuevo email
-     * @param active si esta activo
      * @return el cliente actualizado
      * @throws ClienteNotFoundException si no se encuentra el cliente
      */
     Cliente actualizarCliente(UUID id, String nombre, String apellido,
-                              String email, Boolean active);
+                              String email);
 
     /**
      * Actualiza el estado (activo/inactivo) de un cliente

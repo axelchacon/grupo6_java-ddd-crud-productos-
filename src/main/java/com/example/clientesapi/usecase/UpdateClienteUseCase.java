@@ -18,37 +18,25 @@ public class UpdateClienteUseCase {
     private final ClienteService productoService;
 
     /**
-     * Actualiza un producto existente
-     * @param id ID del producto a actualizar
+     * Actualiza un cliente existente
+     * @param id ID del cliente a actualizar
      * @param nombre nuevo nombre
-     * @param descripcion nueva descripción
-     * @param precio nuevo precio
-     * @param stock nuevo stock
-     * @param categoria nueva categoría
-     * @return el producto actualizado
+     * @param apellido nueva descripción
+     * @param email nuevo precio
+     * @return el cliente actualizado
      */
-    public Cliente execute(UUID id, String nombre, String descripcion,
-                           BigDecimal precio, Integer stock, String categoria) {
-        return productoService.actualizarProducto(id, nombre, descripcion, precio, stock, categoria);
+    public Cliente execute(UUID id, String nombre, String apellido, String email) {
+        return productoService.actualizarCliente(id, nombre, apellido, nombre);
     }
 
     /**
-     * Actualiza el estado (activo/inactivo) de un producto
-     * @param id ID del producto
+     * Actualiza el estado (activo/inactivo) de un cliente
+     * @param id ID del cliente
      * @param activo nuevo estado
-     * @return el producto actualizado
+     * @return el cliente actualizado
      */
     public Cliente executeStateUpdate(UUID id, Boolean activo) {
-        return productoService.actualizarEstadoProducto(id, activo);
+        return productoService.actualizarEstadoCliente(id, activo);
     }
 
-    /**
-     * Actualiza el stock de un producto
-     * @param id ID del producto
-     * @param cantidad cantidad a añadir (positivo) o restar (negativo)
-     * @return el producto actualizado
-     */
-    public Cliente executeStockUpdate(UUID id, Integer cantidad) {
-        return productoService.actualizarStock(id, cantidad);
-    }
 }
