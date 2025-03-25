@@ -34,14 +34,13 @@ public class ClienteEntity {
     @Column(nullable = false, length = 100)
     private String apellido;
 
-    @Column(columnDefinition = "TEXT")
-    private String descripcion;
+    @Column(nullable = false, length = 100)
+    private String apellido;
 
-    @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal precio;
+    @Column(nullable = false, length = 100)
+    private String apellido;
 
-    @Column(nullable = false)
-    private Integer stock;
+ 
 
     @Column(length = 50)
     private String categoria;
