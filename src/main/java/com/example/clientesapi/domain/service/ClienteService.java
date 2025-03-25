@@ -2,7 +2,6 @@ package com.example.clientesapi.domain.service;
 
 import com.example.clientesapi.domain.model.Cliente;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,7 +21,7 @@ public interface ClienteService {
      * Obtiene un cliente por su ID
      * @param id el ID del cliente
      * @return el cliente encontrado
-     * @throws ProductoNotFoundException si no se encuentra el cliente
+     * @throws ClienteNotFoundException si no se encuentra el cliente
      */
     Cliente obtenerClientePorId(UUID id);
 
@@ -30,7 +29,7 @@ public interface ClienteService {
      * Obtiene un cliente por su código
      * @param codigo el código del cliente
      * @return el cliente encontrado
-     * @throws ProductoNotFoundException si no se encuentra el cliente
+     * @throws ClienteNotFoundException si no se encuentra el cliente
      */
     Cliente obtenerClientePorDNI(String codigo);
 

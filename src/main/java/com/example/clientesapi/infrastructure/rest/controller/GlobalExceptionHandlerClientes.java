@@ -21,7 +21,7 @@ import java.util.List;
  */
 @RestControllerAdvice
 @Slf4j
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandlerClientes {
 
     @ExceptionHandler(ClienteNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleProductoNotFoundException(

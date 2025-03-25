@@ -20,10 +20,10 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Controlador REST para operaciones de Productos
+ * Controlador REST para operaciones de Clientes
  */
 @RestController
-@RequestMapping("/api/productos")
+@RequestMapping("/api/clientes")
 @RequiredArgsConstructor
 public class ClienteController {
 

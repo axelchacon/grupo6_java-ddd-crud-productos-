@@ -29,7 +29,7 @@ public class Cliente {
     /**
      * Método para actualizar un producto con nuevos valores
      */
-    public Cliente actualizar(String nombre, String apellido, String email, Boolean activo) {
+    public Cliente actualizar(String nombre, String apellido, String email) {
         return Cliente.builder()
                 .id(this.id)
                 .nombre(nombre)

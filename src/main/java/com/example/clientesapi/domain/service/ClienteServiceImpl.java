@@ -67,10 +67,10 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public Cliente actualizarCliente(UUID id, String nombre, String apellido, String email, Boolean activo) {
+    public Cliente actualizarCliente(UUID id, String nombre, String apellido, String email) {
         Cliente clienteExistente = obtenerClientePorId(id);
 
-        Cliente clienteActualizado = clienteExistente.actualizar(nombre, apellido, email, activo);
+        Cliente clienteActualizado = clienteExistente.actualizar(nombre, apellido, email);
 
         return clienteRepository.save(clienteActualizado);
     }
