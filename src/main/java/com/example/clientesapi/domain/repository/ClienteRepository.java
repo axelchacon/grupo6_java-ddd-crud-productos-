@@ -1,4 +1,4 @@
-package com.example.productosapi.domain.repository;
+package com.example.clientesapi.domain.repository;
 
 
 import java.util.List;
@@ -11,7 +11,7 @@ import com.example.clientesapi.domain.model.Cliente;
  * Interfaz del repositorio de dominio para Clientes.
  * Define las operaciones de persistencia sin detalles de implementación.
  */
-public interface ProductoRepository {
+public interface ClienteRepository {
 
     /**
      * Guarda un nuevo cliente o actualiza uno existente
