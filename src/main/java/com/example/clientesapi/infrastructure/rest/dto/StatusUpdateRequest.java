@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class StockUpdateRequest {
+public class StatusUpdateRequest {
 
-    @NotNull(message = "La cantidad es obligatoria")
-    private Integer cantidad;
+    @NotNull(message = "El status es obligatorio")
+    private Boolean isActive;
 }
