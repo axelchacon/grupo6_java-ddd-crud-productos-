@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 /**
- * Interfaz del repositorio de dominio para Productos.
+ * Interfaz del repositorio de dominio para Clientes.
  * Define las operaciones de persistencia sin detalles de implementación.
  */
 public interface ClienteRepository {

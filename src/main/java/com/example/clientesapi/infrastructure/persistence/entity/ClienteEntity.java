@@ -34,16 +34,11 @@ public class ClienteEntity {
     @Column(nullable = false, length = 100)
     private String apellido;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 50)
     private String dni;
 
     @Column(nullable = false, length = 100)
-    private String em;
-
- 
-
-    @Column(length = 50)
-    private String categoria;
+    private String email;
 
     @Column(nullable = false)
     private Boolean activo;
