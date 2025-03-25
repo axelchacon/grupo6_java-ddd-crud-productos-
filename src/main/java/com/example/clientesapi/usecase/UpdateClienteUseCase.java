@@ -26,7 +26,7 @@ public class UpdateClienteUseCase {
      * @return el cliente actualizado
      */
     public Cliente execute(UUID id, String nombre, String apellido, String email) {
-        return productoService.actualizarCliente(id, nombre, apellido, nombre);
+        return productoService.actualizarCliente(id, nombre, apellido, email);
     }
 
     /**
