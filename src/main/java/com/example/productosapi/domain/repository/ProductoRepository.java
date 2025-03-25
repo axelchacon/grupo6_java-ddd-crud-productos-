@@ -1,69 +1,61 @@
 package com.example.productosapi.domain.repository;
 
+import com.example.productosapi.domain.model.Producto;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import com.example.clientesapi.domain.model.Cliente;
-
 /**
- * Interfaz del repositorio de dominio para Clientes.
+ * Interfaz del repositorio de dominio para Productos.
  * Define las operaciones de persistencia sin detalles de implementación.
  */
 public interface ProductoRepository {
 
     /**
-     * Guarda un nuevo cliente o actualiza uno existente
-     * @param cliente el cliente a guardar
-     * @return el cliente guardado
+     * Guarda un nuevo producto o actualiza uno existente
+     * @param producto el producto a guardar
+     * @return el producto guardado
      */
-    Cliente save(Cliente cliente);
+    Producto save(Producto producto);
 
     /**
-     * Busca un cliente por su ID
-     * @param id el ID del cliente
-     * @return un Optional con el cliente si existe
+     * Busca un producto por su ID
+     * @param id el ID del producto
+     * @return un Optional con el producto si existe
      */
-    Optional<Cliente> findById(UUID id);
+    Optional<Producto> findById(UUID id);
 
     /**
-     * Busca un cliente por su código
-     * @param dni el código del cliente
-     * @return un Optional con el cliente si existe
+     * Busca un producto por su código
+     * @param codigo el código del producto
+     * @return un Optional con el producto si existe
      */
-    Optional<Cliente> findByDNI(String dni);
+    Optional<Producto> findByCodigo(String codigo);
 
     /**
      * Obtiene todos los productos
      * @return lista de productos
      */
-    List<Cliente> findAll();
+    List<Producto> findAll();
 
     /**
-     * Busca productos por nombre
-     * @param nombre la nombre a buscar
-     * @return lista de productos que pertenecen a la nombre
+     * Busca productos por categoría
+     * @param categoria la categoría a buscar
+     * @return lista de productos que pertenecen a la categoría
      */
-    List<Cliente> findByNombre(String nombre);
+    List<Producto> findByCategoria(String categoria);
 
     /**
-     * Busca productos por apellido 
-     * @param apellido la apellido a buscar
-     * @return lista de productos que pertenecen al apellido  
-     */
-    List<Cliente> findByApellido(String apellido);
-
-    /**
-     * Elimina un cliente por su ID
-     * @param id el ID del cliente a eliminar
+     * Elimina un producto por su ID
+     * @param id el ID del producto a eliminar
      */
     void deleteById(UUID id);
 
     /**
-     * Verifica si existe un cliente con el código proporcionado
-     * @param dni el código a verificar
+     * Verifica si existe un producto con el código proporcionado
+     * @param codigo el código a verificar
      * @return true si existe, false en caso contrario
      */
-    boolean existsByDNI(String dni);
+    boolean existsByCodigo(String codigo);
 }

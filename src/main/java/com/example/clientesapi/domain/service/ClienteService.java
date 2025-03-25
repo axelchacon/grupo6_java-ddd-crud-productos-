@@ -7,83 +7,81 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Servicio de dominio para la lógica de negocio relacionada con Productos
+ * Servicio de dominio para la lógica de negocio relacionada con Clientes
  */
 public interface ClienteService {
 
     /**
-     * Crea un nuevo producto
-     * @param producto el producto a crear
-     * @return el producto creado
+     * Crea un nuevo cliente
+     * @param cliente el cliente a crear
+     * @return el cliente creado
      */
-    Cliente crearProducto(Cliente producto);
+    Cliente crearCliente(Cliente cliente);
 
     /**
-     * Obtiene un producto por su ID
-     * @param id el ID del producto
-     * @return el producto encontrado
-     * @throws ProductoNotFoundException si no se encuentra el producto
+     * Obtiene un cliente por su ID
+     * @param id el ID del cliente
+     * @return el cliente encontrado
+     * @throws ProductoNotFoundException si no se encuentra el cliente
      */
-    Cliente obtenerProductoPorId(UUID id);
+    Cliente obtenerClientePorId(UUID id);
 
     /**
-     * Obtiene un producto por su código
-     * @param codigo el código del producto
-     * @return el producto encontrado
-     * @throws ProductoNotFoundException si no se encuentra el producto
+     * Obtiene un cliente por su código
+     * @param codigo el código del cliente
+     * @return el cliente encontrado
+     * @throws ProductoNotFoundException si no se encuentra el cliente
      */
-    Cliente obtenerProductoPorCodigo(String codigo);
+    Cliente obtenerClientePorDNI(String codigo);
 
     /**
      * Obtiene todos los productos
      * @return lista de productos
      */
-    List<Cliente> obtenerTodosLosProductos();
+    List<Cliente> obtenerTodosLosClientes();
 
     /**
      * Obtiene productos por categoría
      * @param categoria la categoría a buscar
      * @return lista de productos de la categoría
      */
-    List<Cliente> obtenerProductosPorCategoria(String categoria);
+    List<Cliente> obtenerProductosPorNombre(String nombre);
+
+      /**
+     * Obtiene productos por categoría
+     * @param categoria la categoría a buscar
+     * @return lista de productos de la categoría
+     */
+    List<Cliente> obtenerProductosPorApellido(String apellido);
 
     /**
-     * Actualiza un producto existente
-     * @param id el ID del producto a actualizar
+     * Actualiza un cliente existente
+     * @param id el ID del cliente a actualizar
      * @param nombre nuevo nombre
      * @param descripcion nueva descripción
      * @param precio nuevo precio
      * @param stock nuevo stock
      * @param categoria nueva categoría
-     * @return el producto actualizado
-     * @throws ProductoNotFoundException si no se encuentra el producto
+     * @return el cliente actualizado
+     * @throws ProductoNotFoundException si no se encuentra el cliente
      */
-    Cliente actualizarProducto(UUID id, String nombre, String descripcion,
+    Cliente actualizarCliente(UUID id, String nombre, String descripcion,
                                BigDecimal precio, Integer stock, String categoria);
 
     /**
-     * Actualiza el estado (activo/inactivo) de un producto
-     * @param id el ID del producto
+     * Actualiza el estado (activo/inactivo) de un cliente
+     * @param id el ID del cliente
      * @param activo el nuevo estado
-     * @return el producto actualizado
-     * @throws ProductoNotFoundException si no se encuentra el producto
+     * @return el cliente actualizado
+     * @throws ProductoNotFoundException si no se encuentra el cliente
      */
-    Cliente actualizarEstadoProducto(UUID id, Boolean activo);
+    Cliente actualizarEstadoCliente(UUID id, Boolean activo);
 
     /**
-     * Elimina un producto por su ID
-     * @param id el ID del producto a eliminar
-     * @throws ProductoNotFoundException si no se encuentra el producto
+     * Elimina un cliente por su ID
+     * @param id el ID del cliente a eliminar
+     * @throws ProductoNotFoundException si no se encuentra el cliente
      */
-    void eliminarProducto(UUID id);
+    void eliminarCliente(UUID id);
 
-    /**
-     * Actualiza el stock de un producto
-     * @param id el ID del producto
-     * @param cantidad la cantidad a añadir (positivo) o restar (negativo)
-     * @return el producto con el stock actualizado
-     * @throws ProductoNotFoundException si no se encuentra el producto
-     * @throws BusinessException si no hay suficiente stock para reducir
-     */
-    Cliente actualizarStock(UUID id, Integer cantidad);
 }

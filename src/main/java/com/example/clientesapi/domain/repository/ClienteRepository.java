@@ -1,37 +1,38 @@
-package com.example.clientesapi.domain.repository;
+package com.example.productosapi.domain.repository;
 
-import com.example.clientesapi.domain.model.Cliente;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.example.clientesapi.domain.model.Cliente;
+
 /**
  * Interfaz del repositorio de dominio para Clientes.
  * Define las operaciones de persistencia sin detalles de implementación.
  */
-public interface ClienteRepository {
+public interface ProductoRepository {
 
     /**
-     * Guarda un nuevo producto o actualiza uno existente
-     * @param producto el producto a guardar
-     * @return el producto guardado
+     * Guarda un nuevo cliente o actualiza uno existente
+     * @param cliente el cliente a guardar
+     * @return el cliente guardado
      */
-    Cliente save(Cliente producto);
+    Cliente save(Cliente cliente);
 
     /**
-     * Busca un producto por su ID
-     * @param id el ID del producto
-     * @return un Optional con el producto si existe
+     * Busca un cliente por su ID
+     * @param id el ID del cliente
+     * @return un Optional con el cliente si existe
      */
     Optional<Cliente> findById(UUID id);
 
     /**
-     * Busca un producto por su código
-     * @param codigo el código del producto
-     * @return un Optional con el producto si existe
+     * Busca un cliente por su código
+     * @param dni el código del cliente
+     * @return un Optional con el cliente si existe
      */
-    Optional<Cliente> findByCodigo(String codigo);
+    Optional<Cliente> findByDNI(String dni);
 
     /**
      * Obtiene todos los productos
@@ -40,22 +41,29 @@ public interface ClienteRepository {
     List<Cliente> findAll();
 
     /**
-     * Busca productos por categoría
-     * @param categoria la categoría a buscar
-     * @return lista de productos que pertenecen a la categoría
+     * Busca productos por nombre
+     * @param nombre la nombre a buscar
+     * @return lista de productos que pertenecen a la nombre
      */
-    List<Cliente> findByCategoria(String categoria);
+    List<Cliente> findByNombre(String nombre);
 
     /**
-     * Elimina un producto por su ID
-     * @param id el ID del producto a eliminar
+     * Busca productos por apellido 
+     * @param apellido la apellido a buscar
+     * @return lista de productos que pertenecen al apellido  
+     */
+    List<Cliente> findByApellido(String apellido);
+
+    /**
+     * Elimina un cliente por su ID
+     * @param id el ID del cliente a eliminar
      */
     void deleteById(UUID id);
 
     /**
-     * Verifica si existe un producto con el código proporcionado
-     * @param codigo el código a verificar
+     * Verifica si existe un cliente con el código proporcionado
+     * @param dni el código a verificar
      * @return true si existe, false en caso contrario
      */
-    boolean existsByCodigo(String codigo);
+    boolean existsByDNI(String dni);
 }
