@@ -28,7 +28,7 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     public Cliente crearCliente(Cliente cliente) {
         if (clienteRepository.existsByDNI(cliente.getDni())) {
-            throw new BusinessException("Ya existe un cliente con el código: " + cliente.getDni());
+            throw new BusinessException("Ya existe un cliente con el DNI: " + cliente.getDni());
         }
 
         return clienteRepository.save(cliente);
